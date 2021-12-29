@@ -382,6 +382,7 @@ function _G.test_default()
          bool bool2 = 16;
          TestNest nest = 17;
          repeated int32 array = 18;
+         repeated TestDefaultColor color_array = 19;
       } ]]
 
    local _, _, _, _, rep = pb.field("TestDefault", "foo")
@@ -441,6 +442,7 @@ function _G.test_default()
    eq(dt.bool1, false)
    eq(dt.bool2, false)
    table_eq(dt.array, {})
+   table_eq(dt.color_array, {})
 
    pb.option "no_default_values"
    pb.option "encode_default_values"
